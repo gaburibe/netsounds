@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+<head>
+<script type="text/javascript">
+  var fresco_detune=100;
+  var fresco_duration=1;
+</script>
+  <meta charset="UTF-8">
+  <title>Auto Pong</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+ <style type="text/css">
+rect{
+  display:none;
+}
+text{
+  display: none;
+}
+.netsounds{
+	position: absolute;
+	
+	top:40vh;
+	right:0px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20vw;
+	color:greenyellow;
+}
+</style>
+<script src="../netsounds/karplus.js">
+</script> 
+</head>
+
+<body>
+<!-- <div class="netsounds">NetsoundS</div> -->
+  <P>
+<center>
+<form method="POST" name="menu" >
+  <select name="selectedBuffer" 
+    onChange="changeBufferSize(this.form.selectedBuffer)">
+    <option value = 256> 256 </option>
+    <option value = 512> 512 </option>
+    <option selected value = 1024> 1024 </option>
+    <option value = 2048> 2048 </option>
+    <option value = 4096> 4096 </option>
+    <option value = 8192> 8192 </option>
+  </select>
+</form>
+</center>
+<div class="scores"><span id="score1">0</span><span>-</span><span id="score2">0</span></div>
+<canvas></canvas>
+  
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+    var idp;
+  $( document ).ready(function() {
+  	// var myVar = setInterval(function(){
+   //        _f4u$t.button_down("faust_button_box_"+idp)
+   //        _f4u$t.button_up("faust_button_box_"+idp)
+   //      }, 1000);
+    console.log( "ready!" );
+    // var myVar = setInterval(myTimer, 1000);
+    // $('.faust-button-box').each(function( index ) {
+    //   idp="A";
+    //   console.log( index + ": " + $( this ).parent().attr("id") );
+    // });
+    idp=$('.faust-button-box').parent().attr("id");
+    console.log("id",idp);
+    memo(idp)
+
+});
+function playme(){
+  	_f4u$t.button_down("faust_button_box_"+idp)
+           _f4u$t.button_up("faust_button_box_"+idp)
+}
+  function memo(idp){
+        // var myVar = setInterval(function(){
+        //   _f4u$t.button_down("faust_button_box_"+idp)
+        //   _f4u$t.button_up("faust_button_box_"+idp)
+        // }, 1000);
+   
+  }
+</script>
+<script type="text/javascript"></script>
+</body>
+</html>

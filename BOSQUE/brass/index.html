@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html >
+<head>
+<script type="text/javascript">
+  var fresco_detune=10;
+  var fresco_duration=10;
+</script>
+  <meta charset="UTF-8">
+  <title>Auto Pong</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+ <style type="text/css">
+rect{
+  display:none;
+}
+text{
+  display: none;
+}
+.netsounds{
+	position: absolute;
+	
+	top:40vh;
+	right:0px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20vw;
+	color:greenyellow;
+}
+</style>
+<script src="../netsounds/karplus.js">
+</script> 
+</head>
+
+<body>
+<!-- <div class="netsounds">NetsoundS</div> -->
+  <P>
+<center>
+<form method="POST" name="menu" >
+  <select name="selectedBuffer" 
+    onChange="changeBufferSize(this.form.selectedBuffer)">
+    <option value = 256> 256 </option>
+    <option value = 512> 512 </option>
+    <option selected value = 1024> 1024 </option>
+    <option value = 2048> 2048 </option>
+    <option value = 4096> 4096 </option>
+    <option value = 8192> 8192 </option>
+  </select>
+</form>
+</center>
+<div class="scores"><span id="score1">0</span><span>-</span><span id="score2">0</span></div>
+<canvas></canvas>
+  
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+    var idp;
+  $( document ).ready(function() {
+  	// var myVar = setInterval(function(){
+   //        _f4u$t.button_down("faust_button_box_"+idp)
+   //        _f4u$t.button_up("faust_button_box_"+idp)
+   //      }, 1000);
+    console.log( "ready!" );
+    // var myVar = setInterval(myTimer, 1000);
+    // $('.faust-button-box').each(function( index ) {
+    //   idp="A";
+    //   console.log( index + ": " + $( this ).parent().attr("id") );
+    // });
+    idp=$('.faust-button-box').parent().attr("id");
+    console.log("id",idp);
+    memo(idp)
+
+});
+function playme(){
+  	_f4u$t.button_down("faust_button_box_"+idp)
+           _f4u$t.button_up("faust_button_box_"+idp)
+}
+  function memo(idp){
+        // var myVar = setInterval(function(){
+        //   _f4u$t.button_down("faust_button_box_"+idp)
+        //   _f4u$t.button_up("faust_button_box_"+idp)
+        // }, 1000);
+   
+  }
+</script>
+<script type="text/javascript">
+  function getJSONkarplus32Fresco() {
+  return "{  \"name\": \"karplus32\",  \"inputs\": \"0\",  \"outputs\": \"2\",  \"meta\": [    { \"author\": \"Grame\" },   { \"compilation_options\": \"-single -scal\" },   { \"copyright\": \"(c)GRAME 2006\" },   { \"delay_lib_name\": \"Faust Delay Library\" },   { \"delay_lib_version\": \"0.0\" },   { \"library_path\": \"karplus32\" },   { \"license\": \"BSD\" },   { \"name\": \"karplus32\" },   { \"noise_lib_name\": \"Faust Noise Generator Library\" },   { \"noise_lib_version\": \"0.0\" },   { \"version\": \"1.0\" }  ],  \"ui\": [    {    \"type\": \"vgroup\",    \"label\": \"karplus32\",    \"items\": [      {      \"type\": \"vgroup\",      \"label\": \"excitator\",      \"items\": [        {        \"type\": \"hslider\",        \"label\": \"excitation (samples)\",        \"address\": \"/karplus32/excitator/excitation_(samples)\",        \"init\": \"28\",        \"min\": \"2\",        \"max\": \"512\",        \"step\": \"1\"       },       {        \"type\": \"button\",        \"label\": \"play\",        \"address\": \"/karplus32/excitator/play\"       }      ]     },     {      \"type\": \"vgroup\",      \"label\": \"noise generator\",      \"items\": [        {        \"type\": \"hslider\",        \"label\": \"level\",        \"address\": \"/karplus32/noise_generator/level\",        \"init\": \"0.5\",        \"min\": \"0\",        \"max\": \"1\",        \"step\": \"0.1\"       }      ]     },     {      \"type\": \"hslider\",      \"label\": \"output volume\",      \"address\": \"/karplus32/output_volume\",      \"init\": \"0.5\",      \"min\": \"0\",      \"max\": \"1\",      \"step\": \"0.1\"     },     {      \"type\": \"vgroup\",      \"label\": \"resonator x32\",      \"items\": [        {        \"type\": \"hslider\",        \"label\": \"attenuation\",        \"address\": \"/karplus32/resonator_x32/attenuation\",        \"init\": \"0.1\",        \"min\": \"0\",        \"max\": \"1\",        \"step\": \"0.01\"       },       {        \"type\": \"hslider\",        \"label\": \"detune\",        \"address\": \"/karplus32/resonator_x32/detune\",        \"init\": \"147\",        \"min\": \"0\",        \"max\": \"512\",        \"step\": \"1\"       },       {        \"type\": \"hslider\",        \"label\": \"duration (samples)\",        \"address\": \"/karplus32/resonator_x32/duration_(samples)\",        \"init\": \"128\",        \"min\": \"2\",        \"max\": \"512\",        \"step\": \"1\"       },       {        \"type\": \"hslider\",        \"label\": \"polyphony\",        \"address\": \"/karplus32/resonator_x32/polyphony\",        \"init\": \"1\",        \"min\": \"0\",        \"max\": \"32\",        \"step\": \"1\"       }      ]     }    ]   }  ] } ";
+}
+</script>
+</body>
+</html>

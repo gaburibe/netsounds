@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #00035f;
+  background: url(https://i.ytimg.com/vi/dMzqY8g3TPk/maxresdefault.jpg);
+  background-size: cover;
+
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  height: 100%;
+  width: 100%;
+  opacity: 1.5;
+}
+
+.scores {
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  color: #FFF;
+  opacity: .8;
+  font-family: monospace;
+  font-size: 3em;
+}
+.scores span {
+  margin: 10px;
+}

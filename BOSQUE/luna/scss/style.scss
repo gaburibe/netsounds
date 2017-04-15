@@ -1,0 +1,34 @@
+$bg-color-from: #333;
+$bg-color-to: #000;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $bg-color-from;
+  background: linear-gradient(to bottom, $bg-color-from, $bg-color-to, $bg-color-from);
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  height: 100%;
+  width: 100%;
+}
+
+.scores {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #FFF;
+  opacity: .8;
+  font-family: monospace;
+  font-size: 3em;
+  
+  span {
+    margin: 10px;
+  }
+}
